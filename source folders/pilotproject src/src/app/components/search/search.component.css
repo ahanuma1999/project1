@@ -1,0 +1,68 @@
+
+  #button{
+    color:greenyellow;
+    border-radius:20px;
+    padding:10px;
+    margin:5px auto;
+    width:10%;
+    border:1px solid grey;
+    background-color:black;
+    }
+
+    #searchbar {
+        width: 30%;
+        border: 1px solid palevioletred
+        
+    }
+     /* form{
+     margin-left: 100px;
+     }  */
+
+     #alert{
+         margin-left: 450px;
+         margin-right: 450px;
+     }
+
+     #search{
+         margin-top: 150px;
+        margin-left: 100px;
+         margin-right: 100px;
+         border: 2px solid rgb(107, 103, 103) ;
+         border-radius: 10px;
+         /* background-color: rgb(253, 253, 253); */
+         background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v904-nunny-017_4.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=caeed1248752b0359b46d257288933e9");
+        background-repeat:no-repeat;
+        background-size: 1500px;
+
+     }
+    
+.form-control{
+    
+        
+        padding:10px;
+        margin:5px auto;
+        width:100%;
+        border:1px solid grey;
+        
+}
+#all{
+    border: 1px solid black;
+    background-color: rgb(63, 61, 61);
+    width:500px;
+box-shadow:0 0 3px 0 rgba(0,0,0,0.3);
+padding:40px;
+margin:2% auto;
+color:white;
+text-align:center;
+}
+a{
+    text-decoration: none;
+}
+
+#back{
+    color:white;
+    border-radius:20px;
+    width:7%;
+    border:1px solid grey;
+    background-color:black;
+}

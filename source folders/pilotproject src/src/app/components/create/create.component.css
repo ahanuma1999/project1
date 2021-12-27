@@ -1,0 +1,46 @@
+button{
+    color:greenyellow;
+    border-radius:20px;
+    padding:10px;
+    margin:5px auto;
+    width:50%;
+    border:1px solid grey;
+    background-color:black;
+    }
+.form-control{
+    
+        
+        padding:10px;
+        margin:5px auto;
+        width:100%;
+        border:1px solid rgb(0, 0, 0);
+        
+}
+#all{
+    border: 1px solid black;
+    /* background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v904-nunny-017_4.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=caeed1248752b0359b46d257288933e9"); */
+    background-color: rgb(63, 61, 61);
+    width:700px;
+box-shadow:0 0 3px 0 rgba(0,0,0,0.3);
+padding:40px;
+margin:2% auto;
+color:rgb(255, 255, 255);
+text-align:center;
+}
+a{
+    text-decoration: none;
+}
+
+#back{
+    color:white;
+    border-radius:20px;
+    width:7%;
+    margin-left: 100px;
+    border:1px solid grey;
+    background-color:black;
+}
+
+#fields{
+
+    margin-top: 25px;
+}

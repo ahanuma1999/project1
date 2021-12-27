@@ -1,0 +1,38 @@
+ <h1>Delete employee</h1>
+<div class="panel panel-primary">
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>SAPID</th>
+            <th>Firstname</th>
+            <th>Mphasis Email</th>
+            <th>Project Name</th>
+            <th>Action</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+         <tr *ngFor="let employee of emp">
+          <td>{{employee.sapId}}</td>
+          <td>{{employee.firstName}}</td>
+          <td>{{employee.mphasisEmail}}</td>
+          <td>{{employee.fedexEmail}}</td>
+          <td>{{employee.contactNumber}}</td>
+          <td>{{employee.offShorePM}}</td>
+          <td>{{employee.offShoreDM}}</td>
+          <td>{{employee.onSiteDM}}</td>
+          <td>{{employee.onSitePM}}</td>
+          <td>{{employee.contractNumber}}</td>
+          <td>{{employee.projectName}}</td>
+          
+<!--- <td><a routerLink="/delete/{{employee.sapid}}">Delete</a>-->
+  <td><button><span class="material-icons text-danger" (click)="delete(employee)">delete</span></button></td>
+  <!---- <button (click)="Reset()" class="btn btn-info" style="margin-left: 10px">Reset</button>-->
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

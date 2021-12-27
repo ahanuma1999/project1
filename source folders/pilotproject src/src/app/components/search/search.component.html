@@ -1,0 +1,245 @@
+<div id="search">
+  <div>  <h3 align="center" style="color:rgba(10, 10, 10, 0.979);font-size: 50px;"><b>Mapping</b>&nbsp;<span style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;color: rgba(0, 0, 0, 0.795);">Mphasis</span>&nbsp;<b>with</b>&nbsp;<b><span style="color: indigo;">Fed</span><span style="color: orangered;">Ex</span></b>&nbsp;<b>Data</b></h3>
+  </div><br><br>
+
+  <div>
+    <form [formGroup]="form" (ngSubmit)="search()" align = "center">
+      <div class="form-group">
+      
+        <select name="demo" style="width: 10%; padding:25.5px ;background-color: rgb(192, 73, 73);;color: rgb(255, 255, 255); border: 1px solid rgb(0, 0, 0);"  formControlName="searchDropdown">
+          <option  value="1" selected = "selected">SAPID</option>
+          <option value="2">LDAPID</option>
+        </select>
+        
+        <input  type="text" style="width: 30%;padding:23px ;background-color: rgb(137, 231, 100);;color:rgb(0, 0, 0); border: 1px solid rgb(0, 0, 0);" formControlName="search" placeholder=" Search for Employee with SapId or LdapId" name="id" value = "id"
+          [ngClass]="{ 'is-invalid':  f.search.errors }" />
+          <button data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 8%; padding:23px ; border: 1px solid rgb(0, 0, 0); background-color: rgb(31, 128, 184);color: rgb(10, 10, 10);"  type="submit" [disabled] = "form.invalid"><!--<i class="material-icons">search</i> -->
+           SEARCH</button><br><br><br>
+          
+    
+        <div *ngIf=" submitted && f.search.errors || f.search.touched" class="invalid-feedback">
+          <div id="alert" *ngIf="f?.search?.errors?.required" style="color: rgb(255, 0, 0);"  >search field can't be blank</div>
+          <div  id="alert" *ngIf="f?.search?.errors?.pattern" style="color: red;" >Only numeric values must be entered</div>
+        </div>
+
+           <div align="center">      
+            <button style="width: 10%; padding:10px ; border: 1px; border-radius: 100px;background-color: rgb(49, 49, 49);"><a routerLink="/create" style="text-decoration: none;color: rgb(255, 255, 255);">Add Employee</a></button>
+          </div>
+      </div>
+      
+         
+          
+          <!-- <p>  {{ (employ | async)?.sapId}} </p>
+        <p>  {{ (employ | async)?.ldapId}} </p> -->
+    </form>&nbsp;&nbsp;
+      
+  </div>
+
+</div>
+
+
+ <!-- <div id="alert" *ngIf ="notFound" style="color: red;" class="alert alert-danger"> Employee Not Found ! </div> -->
+<!--<div *ngIf ="submitted" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form  (ngSubmit)="updateEmployee(newEmployee)" #createUserForm="ngForm">
+          <div class="form-group" >
+            <label>SAP ID * </label>
+            <input type="number" placeholder="Enter SAP ID" class="form-control" name="sapId" [(ngModel)]="employeedata.sapId" required>
+          </div>
+          <div class="form-group" >
+            <label>LDAP ID * </label>
+            <input type="number" placeholder="Enter LDAP ID" class="form-control" name="ldapId" [(ngModel)]="employeedata.ldapId" required>
+          </div>
+          <div class="form-group" >
+            <label>First NAME * </label>
+            <input type="text" placeholder="Enter First NAME" class="form-control" name="firstName" [(ngModel)]="employeedata.firstName" required>
+          </div>
+          <div class="form-group" >
+            <label>Middle Name * </label>
+            <input type="text" placeholder="Enter Middle Name" class="form-control" name="middleName" [(ngModel)]="employeedata.middleName" required>
+          </div>
+          <div class="form-group" >
+            <label>Last Name * </label>
+            <input type="text" placeholder="Enter Last Name" class="form-control" name="lastName" [(ngModel)]="employeedata.lastName" required>
+          </div>
+          <div class="form-group" >
+            <label>offShorePM * </label>
+            <input type="text" placeholder="Enter offShorePM" class="form-control" name="offShorePM" [(ngModel)]="employeedata.offShorePM" required>
+          </div>
+          <div class="form-group" >
+            <label>offShoreDM * </label>
+            <input type="text" placeholder="Enter offShoreDM" class="form-control" name="offShoreDM" [(ngModel)]="employeedata.offShoreDM" required>
+          </div>
+          <div class="form-group" >
+            <label>onSitePM * </label>
+            <input type="text" placeholder="Enter onSitePM" class="form-control" name="onSitePM" [(ngModel)]="employeedata.onSitePM" required>
+          </div>
+          <div class="form-group" >
+            <label>onSiteDM * </label>
+            <input type="text" placeholder="Enter onSiteDM" class="form-control" name="onSiteDM" [(ngModel)]="employeedata.onSiteDM" required>
+          </div>
+          <div class="form-group" >
+            <label>fedexMgr * </label>
+            <input type="text" placeholder="Enter fedexMgr" class="form-control" name="fedexMgr" [(ngModel)]="employeedata.fedexMgr" required>
+          </div>
+          <div class="form-group" >
+            <label>clientMD * </label>
+            <input type="text" placeholder="Enter clientMD" class="form-control" name="clientMD" [(ngModel)]="employeedata.clientMD" required>
+          </div>
+          <div class="form-group" >
+            <label>fedexVP * </label>
+            <input type="text" placeholder="Enter fedexVP" class="form-control" name="fedexVP" [(ngModel)]="employeedata.fedexVP" required>
+          </div>
+          <div class="form-group" >
+            <label>fedexSVP * </label>
+            <input type="text" placeholder="Enter fedexSVP" class="form-control" name="fedexSVP" [(ngModel)]="employeedata.fedexSVP" required>
+          </div>
+          <div class="form-group" >
+            <label>MPHASIS MAIL * </label>
+            <input type="email" placeholder="Enter MPHASIS MAIL" class="form-control" name="mphasisEmail" [(ngModel)]="employeedata.mphasisEmail" required>
+          </div>
+          <div class="form-group" >
+            <label>FEDEX MAIL * </label>
+            <input type="email" placeholder="Enter FEDEX MAIL" class="form-control" name="fedexEmail" [(ngModel)]="employeedata.fedexEmail" required>
+          </div>
+          <div class="form-group" >
+            <label>PERSONAL MAIL * </label>
+            <input type="email" placeholder="Enter PERSONAL MAIL" class="form-control" name="personalEmail" [(ngModel)]="employeedata.personalEmail" required>
+          </div>
+          <div class="form-group" >
+            <label>CONTACT NUMBER * </label>
+            <input type="number" placeholder="Enter CONTACT NUMBER" class="form-control" name="contactNumber" [(ngModel)]="employeedata.contactNumber" required>
+          </div>
+          <div class="form-group" >
+            <label>CONTRACT NUMBER * </label>
+            <input type="number" placeholder="Enter CONTRACT NUMBER" class="form-control" name="contractNumber" [(ngModel)]="employeedata.contractNumber" required>
+          </div>
+          <div class="form-group" >
+            <label>PROJECT NAME * </label>
+            <input type="text" placeholder="Enter PROJECT NAME" class="form-control" name="projectName" [(ngModel)]="employeedata.projectName" required>
+          </div>
+          <div class="form-group" >
+            <label>PROJECT ID * </label>
+            <input type="number" placeholder="Enter PROJECT ID" class="form-control" name="projectID" [(ngModel)]="employeedata.projectID" required>
+          </div>
+          <button type="submit" class="btn btn-outline-success" align="center" >Update</button>&nbsp;&nbsp;
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button  class="btn btn-outline-danger" align="center" (click)="delete(employeedata)">Delete</button>&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-outline-info" align="center" (click)="createUserForm.reset()">Reset</button>
+  
+      </div>
+    </div>
+  </div>
+</div> -->
+<div *ngIf ="submitted" class="container" id="all">
+  <form  (ngSubmit)="updateEmployee(newEmployee)" #createUserForm="ngForm">
+    <div class="d-flex">
+      <div class="form-group" >
+        <label>SAP ID * </label>
+        <input type="number" placeholder="Enter SAP ID" class="form-control" name="sapId" [(ngModel)]="employeedata.sapId" required>
+      </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="form-group" >
+        <label>LDAP ID * </label>
+        <input type="number" placeholder="Enter LDAP ID" class="form-control" name="ldapId" [(ngModel)]="employeedata.ldapId" required>
+      </div>
+    </div>
+    <div class="d-flex">
+      <div class="form-group" >
+        <label>FIRST NAME * </label>
+        <input type="text" placeholder="Enter First NAME" class="form-control" name="firstName" [(ngModel)]="employeedata.firstName" required>
+      </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="form-group" >
+        <label>MIDDLE NAME * </label>
+        <input type="text" placeholder="Enter Middle Name" class="form-control" name="middleName" [(ngModel)]="employeedata.middleName" required>
+      </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="form-group" >
+      <label>LAST NAME * </label>
+      <input type="text" placeholder="Enter Last Name" class="form-control" name="lastName" [(ngModel)]="employeedata.lastName" required>
+    </div>
+    
+  </div>
+  <div class="d-flex">
+    <div class="form-group" >
+      <label>OFFSHOREPM * </label>
+      <input type="text" placeholder="Enter offShorePM" class="form-control" name="offShorePM" [(ngModel)]="employeedata.offShorePM" required>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="form-group" >
+      <label>OFFSHOREDM * </label>
+      <input type="text" placeholder="Enter offShoreDM" class="form-control" name="offShoreDM" [(ngModel)]="employeedata.offShoreDM" required>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="form-group" >
+      <label>ONSITEPM * </label>
+      <input type="text" placeholder="Enter onSitePM" class="form-control" name="onSitePM" [(ngModel)]="employeedata.onSitePM" required>
+    </div>
+  </div>
+  <div class="d-flex">
+    <div class="form-group" >
+      <label>ONSITEDM * </label>
+      <input type="text" placeholder="Enter onSiteDM" class="form-control" name="onSiteDM" [(ngModel)]="employeedata.onSiteDM" required>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="form-group" >
+      <label>FEDEX MGR * </label>
+      <input type="text" placeholder="Enter fedexMgr" class="form-control" name="fedexMgr" [(ngModel)]="employeedata.fedexMgr" required>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="form-group" >
+      <label>CLIENT MD * </label>
+      <input type="text" placeholder="Enter clientMD" class="form-control" name="clientMD" [(ngModel)]="employeedata.clientMD" required>
+    </div>
+  </div>
+  <div class="d-flex">
+    <div class="form-group" >
+      <label>FEDEX VP * </label>
+      <input type="text" placeholder="Enter fedexVP" class="form-control" name="fedexVP" [(ngModel)]="employeedata.fedexVP" required>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="form-group" >
+      <label>FEDEX SVP * </label>
+      <input type="text" placeholder="Enter fedexSVP" class="form-control" name="fedexSVP" [(ngModel)]="employeedata.fedexSVP" required>
+    </div>
+  </div>
+  
+  <div class="form-group" >
+    <label>MPHASIS MAIL * </label>
+    <input type="email" placeholder="Enter MPHASIS MAIL" class="form-control" name="mphasisEmail" [(ngModel)]="employeedata.mphasisEmail" required>
+  </div>
+  <div class="form-group" >
+    <label>FEDEX MAIL * </label>
+    <input type="email" placeholder="Enter FEDEX MAIL" class="form-control" name="fedexEmail" [(ngModel)]="employeedata.fedexEmail" required>
+  </div>
+  <div class="form-group" >
+    <label>PERSONAL MAIL * </label>
+    <input type="email" placeholder="Enter PERSONAL MAIL" class="form-control" name="personalEmail" [(ngModel)]="employeedata.personalEmail" required>
+  </div>
+  <div class="d-flex">
+    <div class="form-group" >
+      <label>CONTACT NUMBER * </label>
+      <input type="number" placeholder="Enter CONTACT NUMBER" class="form-control" name="contactNumber" [(ngModel)]="employeedata.contactNumber" required>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="form-group" >
+      <label>CONTRACT NUMBER * </label>
+      <input type="number" placeholder="Enter CONTRACT NUMBER" class="form-control" name="contractNumber" [(ngModel)]="employeedata.contractNumber" required>
+    </div>
+  </div>
+  <div class="d-flex">
+    <div class="form-group" >
+      <label>PROJECT NAME * </label>
+      <input type="text" placeholder="Enter PROJECT NAME" class="form-control" name="projectName" [(ngModel)]="employeedata.projectName" required>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="form-group" >
+      <label>PROJECT ID * </label>
+      <input type="number" placeholder="Enter PROJECT ID" class="form-control" name="projectID" [(ngModel)]="employeedata.projectID" required>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-outline-info" align="center" >Update</button>&nbsp;&nbsp;
+  </form>&nbsp;&nbsp;&nbsp;<br>
+  <button  class="btn btn-outline-info" align="center" (click)="delete(employeedata)" (click)="createUserForm.reset()">Delete</button>&nbsp;&nbsp;&nbsp;
+  <button class="btn btn-outline-info" align="center" (click)="createUserForm.reset()">Reset</button>
+  
+</div>

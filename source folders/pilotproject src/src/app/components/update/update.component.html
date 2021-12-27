@@ -1,0 +1,171 @@
+<div class="jumbotron py-4">
+  <h1 class="display-4 mb-0 text-center" align="center">Update</h1>
+</div>
+
+<div class="container" id="all">
+  <form [formGroup]="formm" (ngSubmit)="onSubmit(newEmployee)" #createUserForm="ngForm" align="center">
+    <div class="form-group" >
+      <label>SAP ID * </label>
+      <input type="number" placeholder="Enter SAP ID" formControlName="sapId" class="form-control" name="sapId" [(ngModel)]="newEmployee.sapId" required>
+      <div *ngIf="f.sapId.touched && f.sapId.invalid " class="alert alert-danger">
+        <div *ngIf="f?.sapId?.errors?.required" style="color:red">sap Id can't be empty</div>
+      </div>
+    </div>
+  <div class="form-group" >
+      <label>LDAP ID * </label>
+      <input type="number" placeholder="Enter LDAP ID" class="form-control" formControlName="ldapId" name="ldapId" [(ngModel)]="newEmployee.ldapId" required>
+      <div *ngIf="f.ldapId.touched && f.ldapId.invalid" class="alert alert-danger">
+        <div *ngIf="f?.ldapId?.errors?.required" style="color:red">LdapId can't be empty</div>
+      </div>
+  </div>
+    <div class="form-group"  >
+      <label>FIRST NAME * </label>
+      <input type="text" placeholder="Enter first name" formControlName="firstName" class="form-control" name="firstName"  [(ngModel)]="newEmployee.firstName" required>
+      <div *ngIf="f.firstName.touched && f.firstName.invalid" class="alert alert-danger">
+        <div *ngIf="f?.firstName?.errors?.required" style="color: red;">First Name is required</div>
+
+    </div>  
+    </div>
+  <div class="form-group" >
+      <label>MIDDLE NAME * </label>
+      <input type="text" placeholder="Enter Middle name" class="form-control" formControlName="middleName" name="middleName"  [(ngModel)]="newEmployee.middleName"
+        required>
+        <div *ngIf="f.middleName.touched && f.middleName.invalid" class="alert alert-danger">
+          <div *ngIf="f?.middleName?.errors?.required" style="color:red">Middle Name can't be empty</div>
+        </div>
+      </div>
+  <div class="form-group" >
+      <label>LAST NAME * </label>
+      <input type="text" placeholder="Enter lastname" class="form-control" formControlName="lastName" name="lastName"  [(ngModel)]="newEmployee.lastName"
+        required>
+        <div *ngIf="f.lastName.touched && f.lastName.invalid" class="alert alert-danger">
+          <div *ngIf="f?.lastName?.errors?.required" style="color:red">Last Name can't be empty</div>
+        </div>
+      </div>
+    <div class="form-group" >
+      <label>OFFSHORE PM * </label>
+      <input type="text" placeholder="Enter offshorePm" class="form-control" formControlName="offshorePm" name="offShorePM"  [(ngModel)]="newEmployee.offShorePM"
+        required>
+        <div *ngIf="f.offshorePm.touched && f.offshorePm.invalid" class="alert alert-danger">
+          <div *ngIf="f?.offshorePm?.errors?.required" style="color:red">OffshorePm can't be empty</div>
+        </div>
+      </div>
+      <div class="form-group" >
+      <label>OFFSHORE DM * </label>
+      <input type="text" placeholder="Enter offshoreDm" class="form-control" formControlName="offshoreDm" name="offShoreDM"  [(ngModel)]="newEmployee.offShoreDM"
+        required>
+        <div *ngIf="f.offshoreDm.touched && f.offshoreDm.invalid" class="alert alert-danger">
+          <div *ngIf="f?.offshoreDm?.errors?.required" style="color:red">OffshoreDm can't be empty</div>
+        </div>
+      </div>
+    <div class="form-group" >
+      <label>ONSITE PM * </label>
+      <input type="text" placeholder="Enter onsitePm" class="form-control" formControlName="onsitePm" name="onSitePM"  [(ngModel)]="newEmployee.onSitePM"
+        required>
+        <div *ngIf="f.onsitePm.touched && f.onsitePm.invalid" class="alert alert-danger">
+          <div *ngIf="f?.onsitePm?.errors?.required" style="color:red">OnsitePm can't be empty</div>
+        </div>
+      </div>
+      <div class="form-group" >
+      <label>ONSITE DM * </label>
+      <input type="text" placeholder="Enter onsiteDm" class="form-control" formControlName="onsiteDm" name="onSiteDM"  [(ngModel)]="newEmployee.onSiteDM"
+        required>
+        <div *ngIf="f.onsiteDm.touched && f.onsiteDm.invalid" class="alert alert-danger">
+          <div *ngIf="f?.onsiteDm?.errors?.required" style="color:red">OnsiteDm can't be empty</div>
+        </div>
+      </div>
+    <div class="form-group" >
+      <label>FedEX MANAGER * </label>
+      <input type="text" placeholder="Enter fedexMgr" class="form-control" formControlName="fedexMgr" name="fedexMgr"  [(ngModel)]="newEmployee.fedexMgr"
+        required>
+        <div *ngIf="f.fedexMgr.touched && f.fedexMgr.invalid" class="alert alert-danger">
+          <div *ngIf="f?.fedexMgr?.errors?.required" style="color:red">Fedex Manger can't be empty</div>
+        </div>
+      </div>
+      <div class="form-group" >
+      <label>CLIENT MD * </label>
+      <input type="text" placeholder="Enter clientMd" class="form-control" formControlName="clientMd" name="clientMD"  [(ngModel)]="newEmployee.clientMD"
+        required>
+        <div *ngIf="f.clientMd.touched && f.clientMd.invalid" class="alert alert-danger">
+          <div *ngIf="f?.clientMd?.errors?.required" style="color:red">ClientMd can't be empty</div>
+        </div>
+      </div>
+    <div class="form-group" >
+      <label>FedEX VICE PRESIDENT * </label>
+      <input type="text" placeholder="Enter fedexVp" class="form-control" formControlName="fedexVp" name="fedexVP" [(ngModel)]="newEmployee.fedexVP"
+        required>
+        <div *ngIf="f.fedexVp.touched && f.fedexVp.invalid" class="alert alert-danger">
+          <div *ngIf="f?.fedexVp?.errors?.required" style="color:red">Fedex vice president can't be empty</div>
+        </div>
+       </div>
+      <div class="form-group" >
+      <label>FedEX SENIOR VICE PRESIDENT * </label>
+      <input type="text" placeholder="Enter fedexSvp" class="form-control" formControlName="fedexSvp" name="fedexSVP"  [(ngModel)]="newEmployee.fedexSVP"
+        required>
+        <div *ngIf="f.fedexSvp.touched && f.fedexSvp.invalid" class="alert alert-danger">
+          <div *ngIf="f?.fedexSvp?.errors?.required" style="color:red">Fedex senior vice president can't be empty</div>
+        </div>
+      </div>
+    <div class="form-group" >
+      <label>MPHASIS EMAIL * </label>
+      <input type="email" placeholder="Enter mphasisEmail" class="form-control" formControlName="mphasisEmail" name="mphasisEmail"  [(ngModel)]="newEmployee.mphasisEmail"
+        required>
+        <div *ngIf="f.mphasisEmail.touched && f.mphasisEmail.invalid" class="alert alert-danger">
+          <div *ngIf="f?.mphasisEmail?.errors?.required" style="color:red">Mphasis Email can't be empty</div>
+          <div *ngIf="f?.mphasisEmail?.errors?.pattern" style="color:red" >Email must be a valid mphasis email address</div>
+        </div>
+      </div>
+      <div class="form-group" >
+      <label>FedEX EMAIL * </label>
+      <input type="email" placeholder="Enter fedexEmail" class="form-control" formControlName="fedexEmail" name="fedexEmail"  [(ngModel)]="newEmployee.fedexEmail"
+        required>
+        <div *ngIf="f.fedexEmail.touched && f.fedexEmail.invalid" class="alert alert-danger">
+          <div *ngIf="f?.fedexEmail?.errors?.required" style="color:red">Fedex Email can't be empty</div>
+          <div *ngIf="f?.fedexEmail?.errors?.pattern" style="color:red">Enter correct fedexEmail address</div>
+        </div>
+      </div>
+    <div class="form-group" >
+      <label>PERSONAL EMAIL * </label>
+      <input type="email" placeholder="Enter personalEmail" class="form-control" formControlName="personalEmail"  name="personalEmail"  [(ngModel)]="newEmployee.personalEmail"
+        required>
+        <div *ngIf="f.personalEmail.touched && f.personalEmail.invalid" class="alert alert-danger" style="color: red;">
+          <div *ngIf=" f?.personalEmail?.errors?.required" style="color:red">Personal Email can't be empty</div>
+          <div *ngIf="f?.personalEmail?.errors?.pattern">Enter valid Personal Email Id</div>
+      </div>
+     </div>
+    <div class="form-group" >
+      <label>CONTACT NUMBER * </label>
+      <input type="number" placeholder="Enter contactNumber" class="form-control" formControlName="contactNumber" name="contactNumber"  [(ngModel)]="newEmployee.contactNumber"
+        required>
+        <div *ngIf="f.contactNumber.touched && f.contactNumber.invalid" class="alert alert-danger" style="color:red">
+          <div *ngIf="f?.contactNumber?.errors?.required" >Contact Number can't be blank </div>
+          <div *ngIf=" f?.contactNumber?.errors?.pattern" style="color:red">Contact Number should be a 10 digit number</div>
+      </div>
+     </div>
+      <div class="form-group" >
+      <label>CONTRACT NUMBER * </label>
+      <input type="number" placeholder="Enter contractNumber" class="form-control" formControlName="contractNumber" name="contractNumber" [(ngModel)]="newEmployee.contractNumber"
+        required>
+        <div *ngIf="f.contractNumber.touched && f.contractNumber.invalid" class="alert alert-danger">
+          <div *ngIf="f?.contractNumber?.errors?.required" style="color:red">Contract Number can't be empty</div>
+        </div>
+      </div>
+    <div class="form-group" >
+      <label>PROJECT NAME * </label>
+      <input type="text" placeholder="Enter projectName" class="form-control" formControlName="projectName" name="projectName" [(ngModel)]="newEmployee.projectName"
+        required>
+        <div *ngIf="f.projectName.touched && f.projectName.invalid" class="alert alert-danger">
+          <div *ngIf="f?.projectName?.errors?.required" style="color:red">Project Name can't be empty</div>
+        </div>
+      </div>
+      <div class="form-group" >
+      <label>PROJECT ID * </label>
+      <input type="number" placeholder="Enter projectId" class="form-control" formControlName="projectId" name="projectId" [(ngModel)]="newEmployee.projectID"
+        required>
+        <div *ngIf="f.projectId.touched && f.projectId.invalid" class="alert alert-danger">
+          <div *ngIf="f?.projectId?.errors?.required" style="color:red">Project Id can't be empty</div>
+        </div>
+      </div>
+    <button type="submit" class="btn btn-dark" align="center">Save</button>
+  </form>
+</div>

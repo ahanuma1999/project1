@@ -1,0 +1,32 @@
+button{
+    color:white;
+    border-radius:20px;
+    padding:10px;
+    margin:5px auto;
+    width:50%;
+    border:1px solid grey;
+    background-color:black;
+    }
+.form-control{
+    
+        
+        padding:10px;
+        margin:5px auto;
+        width:100%;
+        border:1px solid grey;
+        
+}
+#all{
+    border: 1px solid black;
+    
+    width:400px;
+box-shadow:0 0 3px 0 rgba(0,0,0,0.3);
+padding:40px;
+margin:2% auto;
+color: blanchedalmond;
+background-image:url(https://images.unsplash.com/photo-1554050857-c84a8abdb5e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80);
+text-align:center;
+}
+a{
+    text-decoration: none;
+}
